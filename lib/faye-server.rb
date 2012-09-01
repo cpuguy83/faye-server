@@ -1,0 +1,6 @@
+require 'rubygems'
+require 'eventmachine'
+require 'Faye'
+require 'net/http'
+require 'JSON'
+require './server/publisher'

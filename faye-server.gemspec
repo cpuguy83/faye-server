@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "faye-server.gemspec",
     "lib/faye-server.rb",
     "lib/faye-server/publisher.rb",
     "test/helper.rb",

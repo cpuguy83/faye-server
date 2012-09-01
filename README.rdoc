@@ -1,6 +1,11 @@
 = faye-server
 
-Description goes here.
+Extend FayServer in your class and you will get the following accessors for the class:
+    - messaging_server_options
+    - messaging_server_port
+With these you can customize your server, including the mount point, timeout, and any extension you want to add.
+
+This is just a basic wrapper for the Faye::RackAdatper
 
 == Contributing to faye-server
  

@@ -1,11 +1,22 @@
 = faye-server
 
 Extend FayServer in your class and you will get the following accessors for the class:
-    - messaging_server_options
-    - messaging_server_port
+    - messaging_server_options - passes in options to the faye server, can include faye extensions here
+    - messaging_server_port - sets the port your faye server will listen on
 With these you can customize your server, including the mount point, timeout, and any extension you want to add.
 
-This is just a basic wrapper for the Faye::RackAdatper
+This is just a basic wrapper for the Faye::RackAdatper.
+It does, however, spawn the Faye server into another thread where it can be monitored and controlled but not lock up your main thread, be it in Rails or any project.
+
+There are also two more accessors for your class not mentioned above:
+    - messaging_server_thread - Simply the thread running the faye server
+    - messaging_server - the faye server itself
+
+In your class you can call :start, :stop, :publish.
+Start/Stop are pretty straight forward, they start and stop the faye server.
+
+Publish publishes a message to your channel and takes an options hash, requiring a :channel and a :message
+
 
 == Contributing to faye-server
  

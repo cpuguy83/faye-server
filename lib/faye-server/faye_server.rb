@@ -15,6 +15,7 @@ module FayeServer
 	def stop
 		raise 'Not Running' if !self.messaging_server or !self.messaging_server_thread.status
 		self.messaging_server.stop
+		self.messaging_server_thread.kill
 		if self.messaging_server_thread == 'dead'
 			true
 		else

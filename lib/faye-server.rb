@@ -1,6 +1,4 @@
 require 'rubygems'
-#require 'eventmachine'
-require 'Faye'
-#require 'net/http'
+require 'faye'
 require 'JSON'
-require './faye-server/faye_server'
+require_all 'faye-server'

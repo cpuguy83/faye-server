@@ -25,8 +25,8 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "faye-server.gemspec",
-    "lib/faye_server.rb",
-    "lib/faye_server/faye_server.rb",
+    "lib/faye-server.rb",
+    "lib/faye-server/faye_server.rb",
     "test/helper.rb",
     "test/test_faye_server.rb"
   ]

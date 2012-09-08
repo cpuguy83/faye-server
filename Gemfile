@@ -3,6 +3,7 @@ source "http://rubygems.org"
 gem 'eventmachine'
 gem 'thin'
 gem 'faye'
+gem 'require_all'
 
 group :development do
 	gem "shoulda", ">= 0"

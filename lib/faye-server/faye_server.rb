@@ -1,12 +1,18 @@
 module FayeServer
 	attr_accessor :messaging_server_thread, :messaging_server, :messaging_server_port, :messaging_server_options
-
+  attr_accessor :use_ssl, :ssl_key, :ssl_cert
 	# Starts the Faye Server in a new thread
-	def start(options={})
+	def start
 		raise 'Already Running' if self.messaging_server and self.messaging_server_thread.status
 		self.messaging_server_thread = Thread.new do
 			self.messaging_server = Faye::RackAdapter.new(self.messaging_server_options)
-			self.messaging_server.listen(self.messaging_server_port)
+			if self.use_ssl
+			  raise 'NoSSLKey' unless self.ssl_key
+			  raise 'NoSSLCert' unless self.ssl_cert
+			  self.messaging_server.listen(self.messaging_server_port, key: self.ssl_key, cert: self.ssl_cert)
+			else
+			  self.messaging_server.listen(self.messaging_server_port)
+			end
 		end
 	end
 

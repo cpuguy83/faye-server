@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
     "VERSION",
     "faye-server.gemspec",
     "lib/faye-server.rb",
-    "lib/faye-server/faye_server.rb",
+    "lib/faye_server/faye_server.rb",
     "test/helper.rb",
     "test/test_faye-server.rb"
   ]
